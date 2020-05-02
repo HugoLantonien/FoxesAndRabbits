@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>fox10.png</file>
+        <file>fox11.png</file>
+        <file>fox12.png</file>
+        <file>fox13.png</file>
+        <file>fox14.png</file>
+        <file>fox15.png</file>
+        <file>fox20.png</file>
+        <file>fox21.png</file>
+        <file>fox22.png</file>
+        <file>fox23.png</file>
+        <file>fox24.png</file>
+        <file>fox25.png</file>
+        <file>rabbit10.png</file>
+        <file>rabbit11.png</file>
+        <file>rabbit12.png</file>
+        <file>rabbit13.png</file>
+        <file>rabbit14.png</file>
+        <file>rabbit20.png</file>
+        <file>rabbit21.png</file>
+        <file>rabbit22.png</file>
+        <file>rabbit23.png</file>
+        <file>rabbit24.png</file>
+        <file>bug.png</file>
+        <file>Animalstodraw.qml</file>
+        <file>Territoriesgridtodraw.qml</file>
+        <file>Animaltodraw.qml</file>
+        <file>InformationPanelToDrawRenard.qml</file>
+        <file>InformationPanelToDrawLapin.qml</file>
+        <file>Chartstodraw.qml</file>
+    </qresource>
+</RCC>
