@@ -103,7 +103,6 @@ Lapin::Lapin(Lapin &mere, Lapin &pere): Animal(mere,pere)
    if(m_numberOfBabyPerPregnancy < m_numberOfBabyPerPregnancy_Min)
    {m_numberOfBabyPerPregnancy =  m_numberOfBabyPerPregnancy_Min;}
 
-
    fromFather = Animals::randomDouble(mere.m_changingTerritoryRabbits_flirtValue, Lapin::changingTerritoryRabbits_birthVariationRange);
    fromMother = Animals::randomDouble(pere.m_changingTerritoryRabbits_flirtValue, Lapin::changingTerritoryRabbits_birthVariationRange);
    m_changingTerritoryRabbits_flirtValue = (fromFather + fromMother)/2;
@@ -412,8 +411,8 @@ void Lapin::confrontationWithAnotherAnimal(Animal *otherAnimal)
                         {
                             new Lapin(*this, *otherRabbit);
                             m_nbOfBirthThisYear++;
-                            this->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                         }
+                        this->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                     }
                     else
                     {
@@ -421,8 +420,8 @@ void Lapin::confrontationWithAnotherAnimal(Animal *otherAnimal)
                         {
                             new Lapin(*otherRabbit, *this);
                             m_nbOfBirthThisYear++;
-                            otherRabbit->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                         }
+                        otherRabbit->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                     }
                 }
                 else {

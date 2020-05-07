@@ -76,6 +76,8 @@ public:
 
     static int getLifeHourglassFoxes_ageMaximumValue_Initial();
 
+    double getNumberOfBabyPerPregnancy() const;
+
 protected:
     bool huntAnAnimal(Animal *animalToHunt) ;
     bool beHuntedByAnAnimal(Animal *hunterAnimal) ;
@@ -131,6 +133,9 @@ private:
     // Mating
     static int const matingFoxes_birthVariationRange = 5;
     double m_matingFoxes_factorDeathMaximuValueToMate = 1.2;
+    double m_numberOfBabyPerPregnancy = 0.6;
+    static double constexpr m_numberOfBabyPerPregnancy_Max = 2;
+    static double constexpr m_numberOfBabyPerPregnancy_Min = 0.2;
     int m_matingFoxes_timeBetweenPregnancies = 1;
     int m_matingFoxes_flirtingBeginningAge = 4;
     static double constexpr m_matingFoxes_Seducing_Skills = 60.0;

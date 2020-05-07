@@ -13,119 +13,122 @@ QString const descriptionCurve_seducingSkills =  "Evolution through generations 
 QString const descriptionCurve_yearPopulation =  "Evolution of rabbits and foxes population";
 QString const bug =  "Shall not be displayed";
 
+
 QString const ChartDatas::graphDescription [Animal_noMoreAnimal] [Graph_noMoreCurve]  =
 {
     {
+        /* Graph_year_population                                */  "Evolution through years of the rabbits and foxes population",
+        /* Graph_year_rabbits                                   */  bug,
+        /* Graph_year_foxes                                     */  "Evolution through years of the foxes birth, death",
         /* graph_lifeHourglassCurve,                            */  descriptionCurve_lifeHourglassCurve,
         /* graph_attackingDefencingSkills,                      */  "Evolution through generations of the attacking and defending skills, used when a fox fights against a fox, or when it hunts a rabbit",
         /* graph_seducingSkills,                                */  descriptionCurve_seducingSkills,
         /* graph_lifeLevelAddedPerMealNeededPerYear,            */  "Evolution through generations of the life level added when eating a rabbit (max "  + QString::number(Renard::eatingFoxes_maxNumberOfMealsTakenPerYear) + " per years) and needed for one year life",
-        /* graph_rabbit_numberOfBabyPerPregnancy,               */  bug,
+        /* graph_numberOfBabyPerPregnancy,                      */  "Evolution through generations of the average number of babies",
         /* graph_rabbit_changingTerritoryCriteria,              */  bug,
         /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  "Evolution through generations of the choosing a new territory criterias in case of high life level, hunting a lot of rabbit or having a lot of date",
         /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  "Evolution through generations of the choosing a new territory criterias in case of high life level, hunting a lot of rabbit or avoiding fights",
-        /* Graph_year_population                                */  "Evolution through years of the rabbits and foxes population",
-        /* Graph_year_rabbits                                   */  bug,
-        /* Graph_year_foxes                                     */  "Evolution through years of the foxes birth, death"
     },
     {
+        /* Graph_year_population                                */  "Evolution through years of the rabbits and foxes population",
+        /* Graph_year_rabbits                                   */  "Evolution through years of the rabbits birth, death",
+        /* Graph_year_foxes                                     */  bug,
         /* graph_lifeHourglassCurve,                            */  descriptionCurve_lifeHourglassCurve,
         /* graph_attackingDefencingSkills,                      */  "Evolution through generations of the defending skills, used when being hunted by a fox",
         /* graph_seducingSkills,                                */  descriptionCurve_seducingSkills,
         /* graph_lifeLevelAddedPerMealNeededPerYear,            */  "Evolution through generations of the life level added when eating all the year's grass available and needed for one year life",
-        /* graph_rabbit_numberOfBabyPerPregnancy,               */  "Evolution through generations of the average number of babies",
+        /* graph_numberOfBabyPerPregnancy,                      */  "Evolution through generations of the average number of babies",
         /* graph_rabbit_changingTerritoryCriteria,              */  "Evolution through generations of the choosing a new territory criterias, avoiding hunters or having a lot of date or eating a lot of grasse",
         /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  bug,
         /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  bug,
-        /* Graph_year_population                                */  "Evolution through years of the rabbits and foxes population",
-        /* Graph_year_rabbits                                   */  "Evolution through years of the rabbits birth, death",
-        /* Graph_year_foxes                                     */  bug
     }
 };
 
 QString const ChartDatas::graphTitle [Graph_noMoreCurve]  =
 {
+    /* Graph_year_population                                */  "Population evolution",
+    /* Graph_year_rabbits                                   */  "Rabbits deaths and births",
+    /* Graph_year_foxes                                     */  "foxes deaths and births",
     /* graph_lifeHourglassCurve,                            */  "Life level vs age",
     /* graph_attackingDefencingSkills,                      */  "Attacking and defending skills",
     /* graph_seducingSkills,                                */  "Seducing skills",
     /* graph_lifeLevelAddedPerMealNeededPerYear,            */  "Eating and living a year",
-    /* graph_rabbit_numberOfBabyPerPregnancy,               */  "Number of babies",
+    /* graph_numberOfBabyPerPregnancy,                      */  "Number of babies",
     /* graph_rabbit_changingTerritoryCriteria,              */  "Changing territory",
     /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  "Changing territory (high life level)",
     /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  "Changing territory (low life level)",
-    /* Graph_year_population                                */  "Population evolution",
-    /* Graph_year_rabbits                                   */  "Rabbits deaths and births",
-    /* Graph_year_foxes                                     */  "foxes deaths and births",
 };
 
 unsigned int const ChartDatas::numberOfSeries[Graph_noMoreCurve] =
 {
+    /* Graph_year_population                                */  2,
+    /* Graph_year_rabbits                                   */  4,
+    /* Graph_year_foxes                                     */  4,
     /* graph_lifeHourglassCurve,                            */  4,
     /* graph_attackingDefencingSkills,                      */  2,
     /* graph_seducingSkills,                                */  1,
     /* graph_lifeLevelAddedPerMealNeededPerYear,            */  2,
-    /* graph_rabbit_numberOfBabyPerPregnancy,               */  1,
+    /* graph_numberOfBabyPerPregnancy,                      */  1,
     /* graph_rabbit_changingTerritoryCriteria,              */  3,
     /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  2,
     /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  2,
-    /* Graph_year_population                                */  2,
-    /* Graph_year_rabbits                                   */  4,
-    /* Graph_year_foxes                                     */  4
 };
-
 
 bool const ChartDatas::basedOnGeneration[Graph_noMoreCurve] =
 {
+    /* Graph_year_population                                */  false,
+    /* Graph_year_rabbits                                   */  false,
+    /* Graph_year_foxes                                     */  false,
     /* graph_lifeHourglassCurve,                            */  true,
     /* graph_attackingDefencingSkills,                      */  true,
     /* graph_seducingSkills,                                */  true,
     /* graph_lifeLevelAddedPerMealNeededPerYear,            */  true,
-    /* graph_rabbit_numberOfBabyPerPregnancy,               */  true,
+    /* graph_numberOfBabyPerPregnancy,                      */  true,
     /* graph_rabbit_changingTerritoryCriteria,              */  true,
     /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  true,
     /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  true,
-    /* Graph_year_population                                */  false,
-    /* Graph_year_rabbits                                   */  false,
-    /* Graph_year_foxes                                     */  false
 };
 
 QString const ChartDatas::seriesTitle[Graph_noMoreCurve] [maxNumberOfSeries]=
 {
+    /* Graph_year_population                                */  {"rabbits",     "foxes",                                    bug,                                    bug},
+    /* Graph_year_rabbits                                   */  {"births",      "unsuccesfull date",                        "deaths",                               "hunting deaths"},
+    /* Graph_year_foxes                                     */  {"births",      "unsuccesfull date",                        "deaths",                               "fighting deaths"},
     /* graph_lifeHourglassCurve,                            */  {"age=0",       "Adult",                                    "Old",                                  "at death time"},
     /* graph_attackingDefencingSkills,                      */  {"attacking",   "defending",                                bug,                                    bug},
     /* graph_seducingSkills,                                */  {"value",       bug,                                        bug,                                    bug},
     /* graph_lifeLevelAddedPerMealNeededPerYear,            */  {"+ eating",    "- needed",                                 bug,                                    bug},
-    /* graph_rabbit_numberOfBabyPerPregnancy,               */  {"number",      bug,                                        bug,                                    bug},
+    /* graph_numberOfBabyPerPregnancy,                      */  {"number",      bug,                                        bug,                                    bug},
     /* graph_rabbit_changingTerritoryCriteria,              */  {"- hunters",   "+ grass",                                  "+ dates",                              bug},
     /* graph_fox_changingTerritoryCriteriasIfHighLifeLevel, */  {"+ rabbits",   "+ dates",                                  bug,                                    bug},
     /* graph_fox_changingTerritoryCriteriasIfLowLifeLevel,  */  {"+ rabbits",   "- fights",                                 bug,                                    bug},
-    /* Graph_year_population                                */  {"rabbits",     "foxes",                                    bug,                                    bug},
-    /* Graph_year_rabbits                                   */  {"births",      "unsuccesfull date",                        "deaths",                               "hunting deaths"},
-    /* Graph_year_foxes                                     */  {"births",      "unsuccesfull date",                        "deaths",                               "fighting deaths"}
 
 };
+
 
 
 ChartDatas::E_GraphKind const ChartDatas::foxCharts[] = {
-    ChartDatas::Graph_lifeHourglassCurve,                               // 0
-    ChartDatas::Graph_attackingDefencingSkills,                         // 1
-    ChartDatas::Graph_seducingSkills,                                   // 2
-    ChartDatas::Graph_lifeLevelAddedPerMealNeededPerYear,               // 3
-    ChartDatas::Graph_fox_changingTerritoryCriteriasIfHighLifeLevel,    // 6
-    ChartDatas::Graph_fox_changingTerritoryCriteriasIfLowLifeLevel,     // 7
-    ChartDatas::Graph_year_population,                                  // 8
-    ChartDatas::Graph_year_foxes                                        // 9
+    ChartDatas::Graph_year_population,                                  // 0
+    ChartDatas::Graph_year_foxes,                                       // 1
+    ChartDatas::Graph_lifeHourglassCurve,                               // 2
+    ChartDatas::Graph_attackingDefencingSkills,                         // 3
+    ChartDatas::Graph_seducingSkills,                                   // 4
+    ChartDatas::Graph_lifeLevelAddedPerMealNeededPerYear,               // 5
+    ChartDatas::Graph_numberOfBabyPerPregnancy,                         // 6
+    ChartDatas::Graph_fox_changingTerritoryCriteriasIfHighLifeLevel,    // 7
+    ChartDatas::Graph_fox_changingTerritoryCriteriasIfLowLifeLevel,     // 8
 };
 
 ChartDatas::E_GraphKind const ChartDatas::rabbitCharts[] = {
-    ChartDatas::Graph_lifeHourglassCurve,                               // 0
-    ChartDatas::Graph_attackingDefencingSkills,                         // 1
-    ChartDatas::Graph_seducingSkills,                                   // 2
-    ChartDatas::Graph_lifeLevelAddedPerMealNeededPerYear,               // 3
-    ChartDatas::Graph_rabbit_numberOfBabyPerPregnancy,                  // 4
-    ChartDatas::Graph_rabbit_changingTerritoryCriteria,                 // 5
-    ChartDatas::Graph_year_population,                                  // 8
-    ChartDatas::Graph_year_rabbits                                      // 9
+    ChartDatas::Graph_year_population,                                  // 0
+    ChartDatas::Graph_year_rabbits,                                     // 1
+    ChartDatas::Graph_lifeHourglassCurve,                               // 2
+    ChartDatas::Graph_attackingDefencingSkills,                         // 3
+    ChartDatas::Graph_seducingSkills,                                   // 4
+    ChartDatas::Graph_lifeLevelAddedPerMealNeededPerYear,               // 5
+    ChartDatas::Graph_numberOfBabyPerPregnancy,                         // 6
+    ChartDatas::Graph_rabbit_changingTerritoryCriteria,                 // 7
+    ChartDatas::Graph_rabbit_changingTerritoryCriteria                  // 8
 };
 
 
@@ -351,7 +354,7 @@ void ChartDatas::prepareSerie(QLineSeries *lineSerie, unsigned int lineSerieNumb
                     }
                     break;
 
-                case Graph_rabbit_numberOfBabyPerPregnancy:
+                case Graph_numberOfBabyPerPregnancy:
                     switch (lineSerieNumber) {
                     case 0:  y = (*generation)[i].mating_numberOfBabyPerPregnancy / (*generation)[i].nbOfAnimals;      break;
                     default: y =0; break;

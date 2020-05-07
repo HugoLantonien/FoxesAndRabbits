@@ -24,7 +24,7 @@ signals:
 private:
     yearsCounter(QObject *parent = nullptr);
     int m_date ;
-    int m_nbOfYearToPlay = 200;
+    int m_nbOfYearToPlay = 10;
 
     static yearsCounter* instance;
 

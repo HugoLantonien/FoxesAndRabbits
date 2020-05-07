@@ -29,17 +29,17 @@ class ChartDatas : public QObject
 public:
 
     enum E_GraphKind {
+        Graph_year_population,                                  // 2 curves
+        Graph_year_rabbits,                                     // 4 curves
+        Graph_year_foxes,                                       // 4 curves
         Graph_lifeHourglassCurve,                               // 4 curves, birth, max, old, mate
         Graph_attackingDefencingSkills,                         // 2 curves, attacking, defencing
         Graph_seducingSkills,                                   // 1 curve
         Graph_lifeLevelAddedPerMealNeededPerYear,               // 2 curves
-        Graph_rabbit_numberOfBabyPerPregnancy,                  // 1 curve
+        Graph_numberOfBabyPerPregnancy,                         // 1 curve
         Graph_rabbit_changingTerritoryCriteria,                 // 3 curves
         Graph_fox_changingTerritoryCriteriasIfHighLifeLevel,    // 2 curves
         Graph_fox_changingTerritoryCriteriasIfLowLifeLevel,     // 2 curves
-        Graph_year_population,                                  // 2 curves
-        Graph_year_rabbits,                                     // 4 curves
-        Graph_year_foxes,                                       // 4 curves
         Graph_noMoreCurve
     } ;
 

@@ -113,7 +113,7 @@ private:
     // Mating
     static int const matingRabbits_birthVariationRange = 5;                // Variation à la naissance des paramètre de mating
     double m_matingRabbits_factorDeathMaximuValueToMate = 1.2;              // (Héréditaire) *  m_lifeHourglassRabbits * m_lifeLevel doit être supérieur à deathMaximumValue pour envisager mating
-    double m_numberOfBabyPerPregnancy = 1.5;
+    double m_numberOfBabyPerPregnancy = 1;
     static double constexpr m_numberOfBabyPerPregnancy_Max = 4;
     static double constexpr m_numberOfBabyPerPregnancy_Min = 0.5;
     int m_matingRabbits_timeBetweenPregnancies = 1;                         // nbre d'année entre 2 grossesses

@@ -15,7 +15,7 @@ void ChartData::addAFox(const Renard &theFoxToadd)
     this->lifeHourglass_oldAgeDivisorFactor += theFoxToadd.getLifeHourglassFoxes_oldAgeDivisorFactor();
 
     this->mating_factorDeathMaximuValueToMate += theFoxToadd.getMatingFoxes_factorDeathMaximuValueToMate();
-    // this->mating_numberOfBabyPerPregnancy only for rabbit
+    this->mating_numberOfBabyPerPregnancy += theFoxToadd.getNumberOfBabyPerPregnancy();
     this->eating_lifeLevelAddedPerMeal+= theFoxToadd.getEatingFoxes_lifeLevelAddedPerRabbit();
     this->eating_lifeLevelNeedPerYear+= theFoxToadd.getEatingFoxes_lifeLevelNeedPerYear();
 

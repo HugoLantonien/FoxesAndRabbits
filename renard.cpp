@@ -119,6 +119,15 @@ Renard::Renard(Renard &mere, Renard &pere): Animal(mere,pere)
    if(m_eatingFoxes_lifeLevelAddedPerRabbit > m_eatingFoxes_lifeLevelAddedPerRabbit_Max )
    {m_eatingFoxes_lifeLevelAddedPerRabbit = m_eatingFoxes_lifeLevelAddedPerRabbit_Max;}
 
+   fromFather = Animals::randomDouble(mere.m_numberOfBabyPerPregnancy, Renard::matingFoxes_birthVariationRange);
+   fromMother = Animals::randomDouble(pere.m_numberOfBabyPerPregnancy, Renard::matingFoxes_birthVariationRange);
+   m_numberOfBabyPerPregnancy = (fromFather + fromMother)/2;
+   if(m_numberOfBabyPerPregnancy > m_numberOfBabyPerPregnancy_Max)
+   {m_numberOfBabyPerPregnancy =  m_numberOfBabyPerPregnancy_Max;}
+   if(m_numberOfBabyPerPregnancy < m_numberOfBabyPerPregnancy_Min)
+   {m_numberOfBabyPerPregnancy =  m_numberOfBabyPerPregnancy_Min;}
+
+
    fromFather = Animals::randomDouble(mere.m_eatingFoxes_lifeLevelNeedPerYear, Renard::eatingFoxes_birthVariationRange);
    fromMother = Animals::randomDouble(pere.m_eatingFoxes_lifeLevelNeedPerYear, Renard::eatingFoxes_birthVariationRange);
    m_eatingFoxes_lifeLevelNeedPerYear = (fromFather + fromMother)/2;
@@ -302,6 +311,11 @@ void Renard::setIcon()
     m_icon =  (static_cast <unsigned int> (i)) % TerritoriesToDraw::getNbIconToDrawFoxes() ;
 }
 
+double Renard::getNumberOfBabyPerPregnancy() const
+{
+    return m_numberOfBabyPerPregnancy;
+}
+
 int Renard::getLifeHourglassFoxes_ageMaximumValue_Initial()
 {
     return lifeHourglassFoxes_ageMaximumValue_Initial;
@@ -471,16 +485,29 @@ void Renard::confrontationWithAnotherAnimal(Animal *otherAnimal)
                     if (log)
                         qDebug() << this->coutLight() << " and " << otherAnimal->coutLight() << " are having a mate" ;
 
+                    double averageBirthRate = this->m_numberOfBabyPerPregnancy + otherFox->m_numberOfBabyPerPregnancy;
+                    int numberOfBaby = std::lround(Animals::randomDouble(averageBirthRate, 50));
+
+
                     if(this->woman())
                     {
-                        new Renard(*this, *otherFox);
+                        for(int i = 0 ; i < numberOfBaby ; i++)
+                        {
+                            new Renard(*this, *otherFox);
+                            m_nbOfBirthThisYear++;
+                        }
                         this->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                     }
                     else
                     {
-                        new Renard(*otherFox, *this);
+                        for(int i = 0 ; i < numberOfBaby ; i++)
+                        {
+                            new Renard(*otherFox, *this);
+                            m_nbOfBirthThisYear++;
+                        }
                         otherFox->m_lastPregnancyDate = yearsCounter::getInstance()->getDate();
                     }
+
                 } else {
                     qDebug() << "Error, A rabbit try to mate with a fox";
                 }
